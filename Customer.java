@@ -11,7 +11,7 @@ class Customer {
         }
 
         if (email == null) {
-            Sthrow new IllegalArgumentException("Email не может быть пустым.");
+            throw new IllegalArgumentException("Email не может быть пустым.");
         }
 
         this.id = id;

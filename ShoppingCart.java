@@ -85,8 +85,8 @@ class ShoppingCart {
         }
         System.out.println("Корзина: ");
         for (CartItem item : items) {
-            System.out.println("Товар: " + item.getProduct().getName() + " x" + item.getQuantity() + " " + item.getSubtotal());
+            System.out.println("Товар: " + item.getProduct().getName() + " x" + item.getQuantity() + " " + (double) item.getSubtotal() / 100 + "руб.");
         }
-        System.out.println("Итого: " + getTotal());
+        System.out.println("Итого: " + getTotal() / 100 + "руб.");
     }
 }

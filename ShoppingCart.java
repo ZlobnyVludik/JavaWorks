@@ -46,6 +46,18 @@ class ShoppingCart {
         if (quantity <= 0) {
             throw new IllegalArgumentException("Положительным должно быть.");
         }
+        for (CartItem item : items) {
+            if (item.getProduct().getId() == productId) {
+                if (!item.getProduct().isAvailable(quantity)) {
+                    throw new IllegalArgumentException("Недостаточно на складе.");
+                }
+                if (quantity >= item.getQuantity()) {
+                    item.increaseQuantity(quantity - item.getQuantity());
+                } else {
+                    item.decreaseQuantity(item.get)
+                }
+            }
+        }
     }
 
     public long getTotal() {

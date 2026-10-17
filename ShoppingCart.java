@@ -54,10 +54,12 @@ class ShoppingCart {
                 if (quantity >= item.getQuantity()) {
                     item.increaseQuantity(quantity - item.getQuantity());
                 } else {
-                    item.decreaseQuantity(item.get)
+                    item.decreaseQuantity(item.getQuantity() - quantity);
                 }
+                return;
             }
         }
+        throw new IllegalArgumentException("Товар не найден.");
     }
 
     public long getTotal() {
@@ -77,7 +79,14 @@ class ShoppingCart {
     }
 
     public void printCart() {
+        if (items.isEmpty()) {
+            System.out.println("Корзина пуста.");
+            return;
+        }
         System.out.println("Корзина: ");
-        for ()
+        for (CartItem item : items) {
+            System.out.println("Товар: " + item.getProduct().getName() + " x" + item.getQuantity() + " " + item.getSubtotal());
+        }
+        System.out.println("Итого: " + getTotal());
     }
 }

@@ -1,4 +1,3 @@
-package shop
 import java.util.ArrayList;
 
 class ShoppingCart {

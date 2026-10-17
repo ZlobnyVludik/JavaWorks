@@ -1,5 +1,3 @@
-package shop
-
 class OrderItem {
     private finale int productId;
     private finale String productName;

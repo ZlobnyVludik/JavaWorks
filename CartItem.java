@@ -1,5 +1,3 @@
-package shop
-
 class CartItem {
     private final Product product;
     private int quantity;

@@ -9,17 +9,17 @@ class Order {
 
     public Order(int id, Customer customer) {
         if (customer == null) {
-            throw new IllegalArgumentException("Покупатель не может быть null");
+            throw new IllegalArgumentException("Покупатель не может быть пустым.");
         }
+
         this.id = id;
         this.customer = customer;
         this.status = OrderStatus.NEW;
     }
 
-    // Добавление позиции — только пока заказ новый
     public void addItem(OrderItem item) {
         if (item == null) {
-            throw new IllegalArgumentException("Позиция не может быть null");
+            throw new IllegalArgumentException("Позиция не может быть пустой.");
         }
         if (status != OrderStatus.NEW) {
             throw new IllegalStateException("Нельзя изменить заказ в статусе " + status);
@@ -28,12 +28,25 @@ class Order {
         totalInCents += item.getSubtotal();
     }
 
-    // Геттеры
-    public int getId() { return id; }
-    public Customer getCustomer() { return customer; }
-    public ArrayList<OrderItem> getItems() { return items; }
-    public long getTotal() { return totalInCents; }
-    public OrderStatus getStatus() { return status; }
+    public int getId() { 
+        return id;
+    }
+    
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public ArrayList<OrderItem> getItems() {
+        return items;
+    }
+
+    public long getTotal() {
+        return totalInCents;
+    }
+
+    public OrderStatus getStatus() {
+        return status;
+    }
 
     public void markAsPaid() {
         if (status != OrderStatus.NEW) {
@@ -53,14 +66,11 @@ class Order {
     }
 
     public void printOrder() {
-        System.out.println("=== Заказ #" + id + " ===");
-        System.out.println("Покупатель: " + customer.getName()
-                + " (" + customer.getEmail() + ")");
+        System.out.println("Заказ: ");
+        System.out.println("Покупатель: " + customer.getName());
         System.out.println("Статус: " + status);
         for (OrderItem item : items) {
-            System.out.println("  " + item.getProductName()
-                    + " x" + item.getQuantity()
-                    + " = " + (double) item.getSubtotal() / 100 + " руб.");
+            System.out.println("Товар: " + item.getProduct().getName() + " x" + item.getQuantity + " " + (double) item.getSubtotal() / 100 + "руб.")
         }
         System.out.println("Итого: " + (double) totalInCents / 100 + " руб.");
     }

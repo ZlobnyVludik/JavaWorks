@@ -7,14 +7,6 @@ abstract class PaymentMethod {
     }
 }
 
-class CashPayment extends PaymentMethod {
-    @Override
-    public boolean pay(Order order) {
-        System.out.println("Наличные приняты.");
-        return true;
-    }
-}
-
 class OnlinePayment extends PaymentMethod {
     @Override
     public boolean pay(Order order) {

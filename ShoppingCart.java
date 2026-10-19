@@ -86,6 +86,6 @@ class ShoppingCart {
         for (CartItem item : items) {
             System.out.println("Товар: " + item.getProduct().getName() + " x" + item.getQuantity() + " " + (double) item.getSubtotal() / 100 + "руб.");
         }
-        System.out.println("Итого: " + getTotal() / 100 + "руб.");
+        System.out.println("Итого: " + (double) getTotal() / 100 + "руб.");
     }
 }

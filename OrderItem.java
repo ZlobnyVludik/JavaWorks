@@ -1,8 +1,8 @@
 class OrderItem {
-    private finale int productId;
-    private finale String productName;
-    private finale long priceInCents;
-    private finale int quantity
+    private final int productId;
+    private final String productName;
+    private final long priceInCents;
+    private final int quantity;
     
     public OrderItem(Product product, int quantity) {
         if (product == null) {
@@ -18,19 +18,19 @@ class OrderItem {
         this.quantity = quantity;
     }
 
-    public int get(){
+    public int getProductId(){
         return productId;
     }
 
-    public String get(){
+    public String getProductName(){
         return productName;
     }
 
-    public long get(){
+    public long getPriceInCents(){
         return priceInCents;
     }
 
-    public int get(){
+    public int getQuantity(){
         return quantity;
     }
 

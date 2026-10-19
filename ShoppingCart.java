@@ -12,7 +12,7 @@ class ShoppingCart {
         }
 
         for (CartItem item : items) {
-            (item.getProduct().getId() == product.getId()) {
+            if (item.getProduct().getId() == product.getId()) {
                 int newQuantity = item.getQuantity() + quantity;
                 if (!product.isAvailable(newQuantity)) {
                     throw new IllegalArgumentException("Недостаточно на складе.");

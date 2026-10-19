@@ -6,11 +6,3 @@ abstract class PaymentMethod {
                 + " на сумму " + (double) order.getTotal() / 100 + " руб.");
     }
 }
-
-class OnlinePayment extends PaymentMethod {
-    @Override
-    public boolean pay(Order order) {
-        System.out.println("Платёж выполнен.");
-        return true;
-    }
-}

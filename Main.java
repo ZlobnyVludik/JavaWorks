@@ -1,5 +1,3 @@
-package shop;
-
 import java.util.ArrayList;
 
 public class Main {
@@ -25,8 +23,10 @@ public class Main {
         cart1.addProduct(laptop, 1);
         cart1.addProduct(phone, 2);
         cart1.addProduct(mouse, 3);
-        System.out.println("Корзина Ивана:");
+        System.out.println("\nКорзина Ивана:");
         cart1.printCart();
+
+        System.out.println("");
 
         ShoppingCart cart2 = new ShoppingCart();
         cart2.addProduct(headphones, 2);
@@ -87,14 +87,13 @@ public class Main {
         }
 
         System.out.println("\nИзменение цены после оформления:");
-        System.out.println("Цена клавиатуры до: " + keyboard.getPriceInCents() + " коп.");
+        System.out.println("Цена клавиатуры до: " + (double) keyboard.getPriceInCents() / 100 + " руб.");
         keyboard.changePrice(400_00);
-        System.out.println("Цена клавиатуры после: " + keyboard.getPriceInCents() + " коп.");
+        System.out.println("Цена клавиатуры после: " + (double) keyboard.getPriceInCents() / 100 + " руб.");
         System.out.println("Но в заказе " + order2.getId() + " осталась старая цена:");
         for (OrderItem item : order2.getItems()) {
             if (item.getProductId() == 5) {
-                System.out.println("  " + item.getProductName()
-                        + " по цене " + item.getPriceInCents() + " коп.");
+                System.out.println(item.getProductName() + " по цене " + (double) item.getPriceInCents() / 100 + " руб.");
             }
         }
 
@@ -133,13 +132,13 @@ public class Main {
         try {
             ShoppingCart overCart = new ShoppingCart();
             overCart.addProduct(laptop, 100);
-        } catch (IllegalStateException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("Нехватка товара: " + e.getMessage());
         }
 
         System.out.println("Итоговые остатки на складе:");
         for (Product p : catalog) {
-            System.out.println("  " + p.getName() + ": " + p.getStock());
+            System.out.println(p.getName() + ": " + p.getStock());
         }
     }
 }

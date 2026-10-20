@@ -18,19 +18,19 @@ class OrderItem {
         this.quantity = quantity;
     }
 
-    public int getProductId(){
+    public int getProductId() {
         return productId;
     }
 
-    public String getProductName(){
+    public String getProductName() {
         return productName;
     }
 
-    public long getPriceInCents(){
+    public long getPriceInCents() {
         return priceInCents;
     }
 
-    public int getQuantity(){
+    public int getQuantity() {
         return quantity;
     }
 

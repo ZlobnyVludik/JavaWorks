@@ -59,8 +59,7 @@ class OrderService {
             throw new IllegalArgumentException("Способ оплаты не может быть никаким");
         }
         if (order.getStatus() != OrderStatus.NEW) {
-            throw new IllegalStateException("Нельзя оплатить заказ в статусе "
-                    + order.getStatus());
+            throw new IllegalStateException("Нельзя оплатить заказ в статусе " + order.getStatus());
         }
 
         boolean success = paymentMethod.pay(order);

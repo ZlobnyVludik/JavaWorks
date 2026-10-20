@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class OrderService {
     private final ArrayList<Product> catalog;
     private int nextOrderId = 1;

@@ -66,7 +66,6 @@ class Order {
     }
 
     public void printOrder() {
-        System.out.println("Заказ: ");
         System.out.println("Покупатель: " + customer.getName());
         System.out.println("Статус: " + status);
         for (OrderItem item : items) {

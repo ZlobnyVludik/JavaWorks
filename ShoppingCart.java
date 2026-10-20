@@ -18,7 +18,7 @@ class ShoppingCart {
                     throw new IllegalArgumentException("Недостаточно на складе.");
                 }
                 item.increaseQuantity(quantity);
-                System.out.println("Товар " + product.getName() + " добавлен.")
+                System.out.println("Товар " + product.getName() + " добавлен.");
                 return;
             }
         }

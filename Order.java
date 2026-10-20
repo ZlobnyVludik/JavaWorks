@@ -70,7 +70,7 @@ class Order {
         System.out.println("Покупатель: " + customer.getName());
         System.out.println("Статус: " + status);
         for (OrderItem item : items) {
-            System.out.println("Товар: " + item.getProductName().getName() + " x" + item.getQuantity + " " + (double) item.getSubtotal() / 100 + "руб.");
+            System.out.println("Товар: " + item.getProductName() + " x" + item.getQuantity() + " " + (double) item.getSubtotal() / 100 + "руб.");
         }
         System.out.println("Итого: " + (double) totalInCents / 100 + " руб.");
     }

@@ -75,15 +75,13 @@ class OrderService {
             throw new IllegalArgumentException("Заказ не может быть пустым");
         }
         if (order.getStatus() != OrderStatus.NEW) {
-            throw new IllegalStateException("Нельзя отменить заказ в статусе "
-                    + order.getStatus());
+            throw new IllegalStateException("Нельзя отменить заказ в статусе " + order.getStatus());
         }
 
         for (OrderItem item : order.getItems()) {
             Product product = findProduct(item.getProductId());
             if (product == null) {
-                throw new IllegalStateException("Товар с id"
-                        + item.getProductId() + " не найден в каталоге");
+                throw new IllegalStateException("Товар с id" + item.getProductId() + " не найден в каталоге");
             }
             product.increaseStock(item.getQuantity());
         }

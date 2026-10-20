@@ -64,4 +64,11 @@ class Product {
     public String getFormattedPrice() {
         return (double) priceInCents / 100 + " руб.";
     }
+
+    public void changePrice(long newPriceInCents) {
+        if (newPriceInCents < 0) {
+            throw new IllegalArgumentException("Цена не может быть отрицательной.");
+        }
+        this.priceInCents = newPriceInCents;
+    }
 }
